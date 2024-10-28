@@ -16,37 +16,62 @@ Feuille > Pierre
 
 */
 
-
-
-
 function getComputerChoice() {
-    let min = 1;
-    let max = 4;
-    let random = Math.floor(Math.random() * (max - min)) + min;
-if (random === 1) {
-    console.log("Pierre");
-} else if (random === 2) {
-    console.log("Feuille");
-} else {
-    console.log("Ciseaux");
-}    
-}
-
-function getUserChoice() {
-    let userChoice = prompt("Pierre Feuille Ciseaux ?");
-    console.log(userChoice);
-    return userChoice
-}
-
-function compareChoices() {
-    if (random === 1 && userChoice === 1) {
-        console.log("Draw");
+    let computerChoice;
+    let random = Math.floor(Math.random() * 3) + 1;
+    console.log(random);
+    
+    console.log(computerChoice);
+    
+    if (random === 1) {
+        computerChoice = "pierre"
+        return computerChoice
+    } else if (random === 2) {
+        computerChoice = "feuille"
+        console.log(computerChoice);
+        return computerChoice
+        
+    } else if (random === 3) {
+        computerChoice = "ciseaux"
+        console.log(computerChoice)
+        return computerChoice
     }
+    return computerChoice
 }
 
 
-getComputerChoice()
-getUserChoice()
+
+function getHumanChoice() {
+    let humanChoice = prompt("Choose : pierre / feuille / ciseaux");
+    console.log(humanChoice)
+}
+
+
+function playRound(computerChoice, humanChoice) {
+    let humanScore = 0;
+    let computerScore = 0;
+
+    getHumanChoice()
+    getComputerChoice()
+
+    if (computerChoice === humanChoice) {
+        humanScore += 0;
+        computerScore += 0;
+    } else if (computerChoice === "feuille" && humanChoice === "pierre") {
+        computerScore++
+    } else if (computerChoice === "ciseaux" && humanChoice === "feuille") {
+        computerScore++
+    } else if (computerChoice === "pierre" && humanChoice === "ciseaux") {
+        computerScore++
+    } else {
+        humanScore++
+    }
+    console.log(humanScore)
+    console.log(computerScore);
+    
+}
+
+playRound()
 
 
 
