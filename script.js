@@ -21,8 +21,6 @@ function getComputerChoice() {
     let random = Math.floor(Math.random() * 3) + 1;
     console.log(random);
     
-    console.log(computerChoice);
-    
     if (random === 1) {
         computerChoice = "pierre"
         return computerChoice
@@ -44,15 +42,19 @@ function getComputerChoice() {
 function getHumanChoice() {
     let humanChoice = prompt("Choose : pierre / feuille / ciseaux");
     console.log(humanChoice)
+    return humanChoice
 }
 
 
 function playRound(computerChoice, humanChoice) {
     let humanScore = 0;
     let computerScore = 0;
+    let i = 0;
 
     getHumanChoice()
     getComputerChoice()
+
+    for (i = 0; i < 5; i++) {
 
     if (computerChoice === humanChoice) {
         humanScore += 0;
@@ -65,6 +67,7 @@ function playRound(computerChoice, humanChoice) {
         computerScore++
     } else {
         humanScore++
+    }
     }
     console.log(humanScore)
     console.log(computerScore);
