@@ -1,4 +1,4 @@
-// console.log("Hello, world!");
+
 /* 
 Jeu :
 Côté ordi :
@@ -9,11 +9,11 @@ Cöté joueur :
 A l'aide d'un prompt(), demander au joueur de jouer Pierre Feuille Ou Ciseau
 
 
-Règles :
+Règles / Rules :
 
-Pierre > Ciseaux
-Ciseaux > Feuille
-Feuille > Pierre
+Pierre > Ciseaux / Rock > Scissors
+Ciseaux > Feuille / Scissors > Paper
+Feuille > Pierre / Paper > Rock
 
 Le jeu se déroule en 5 manches
 
@@ -21,9 +21,10 @@ Le jeu se déroule en 5 manches
 
 function getComputerChoice() {
     let computerChoice;
+    // var to obtain a random number between 1 and 3
     let random = Math.floor(Math.random() * 3) + 1;
     console.log(random);
-    
+    // each random value is associated with a string (1 = rock, 2 = paper and 3 = scissors)
     if (random == 1) {
         computerChoice = "pierre"
         // console.log(computerChoice);
@@ -45,11 +46,12 @@ function getComputerChoice() {
 
 function getHumanChoice() {
     let humanChoice = prompt("Choose : pierre / feuille / ciseaux");
-    // console.log(humanChoice.toLocaleLowerCase());
+    // lower case method applied to player's input
     return humanChoice.toLocaleLowerCase()
 }
 
-
+/* Instead of creating another function to play multiple rounds,
+ I simply added a for loop to emulate rounds */
 function playRound(computerChoice, humanChoice) {
     let humanScore = 0;
     let computerScore = 0;
