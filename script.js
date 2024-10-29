@@ -21,22 +21,23 @@ function getComputerChoice() {
     let random = Math.floor(Math.random() * 3) + 1;
     console.log(random);
     
-    if (random === 1) {
+    if (random == 1) {
         computerChoice = "pierre"
-        return computerChoice
-    } else if (random === 2) {
+        console.log(computerChoice);
+        
+    } else if (random == 2) {
         computerChoice = "feuille"
         console.log(computerChoice);
-        return computerChoice
         
-    } else if (random === 3) {
+    } else if (random == 3) {
         computerChoice = "ciseaux"
-        console.log(computerChoice)
-        return computerChoice
+        console.log(computerChoice);
+        
     }
+
+    console.log(computerChoice);
     return computerChoice
 }
-
 
 
 function getHumanChoice() {
@@ -51,30 +52,30 @@ function playRound(computerChoice, humanChoice) {
     let computerScore = 0;
     let i = 0;
 
-    getHumanChoice()
-    getComputerChoice()
-
     for (i = 0; i < 5; i++) {
-
+        humanChoice = getHumanChoice()
+        computerChoice = getComputerChoice()
     if (computerChoice === humanChoice) {
         humanScore += 0;
         computerScore += 0;
-    } else if (computerChoice === "feuille" && humanChoice === "pierre") {
+        console.log("Draw")
+    } else if (computerChoice === "feuille" && humanChoice === "pierre" || computerChoice === "ciseaux" && humanChoice === "feuille" || computerChoice === "pierre" && humanChoice === "ciseaux" ) {
         computerScore++
-    } else if (computerChoice === "ciseaux" && humanChoice === "feuille") {
-        computerScore++
-    } else if (computerChoice === "pierre" && humanChoice === "ciseaux") {
-        computerScore++
+        console.log("Computer wins");
+        
     } else {
         humanScore++
+        console.log("You win");
+        
     }
     }
-    console.log(humanScore)
-    console.log(computerScore);
+    console.log("Human : " + humanScore)
+    console.log("Computer : " + computerScore);
     
 }
 
 playRound()
+
 
 
 
