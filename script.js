@@ -23,15 +23,15 @@ function getComputerChoice() {
     
     if (random == 1) {
         computerChoice = "pierre"
-        console.log(computerChoice);
+        // console.log(computerChoice);
         
     } else if (random == 2) {
         computerChoice = "feuille"
-        console.log(computerChoice);
+        // console.log(computerChoice);
         
     } else if (random == 3) {
         computerChoice = "ciseaux"
-        console.log(computerChoice);
+        // console.log(computerChoice);
         
     }
 
@@ -42,8 +42,8 @@ function getComputerChoice() {
 
 function getHumanChoice() {
     let humanChoice = prompt("Choose : pierre / feuille / ciseaux");
-    console.log(humanChoice)
-    return humanChoice
+    // console.log(humanChoice.toLocaleLowerCase());
+    return humanChoice.toLocaleLowerCase()
 }
 
 
