@@ -8,11 +8,14 @@ Il retourne une des 3 valeurs AU HASARD
 Cöté joueur :
 A l'aide d'un prompt(), demander au joueur de jouer Pierre Feuille Ou Ciseau
 
+
 Règles :
 
 Pierre > Ciseaux
 Ciseaux > Feuille
 Feuille > Pierre
+
+Le jeu se déroule en 5 manches
 
 */
 
@@ -59,9 +62,11 @@ function playRound(computerChoice, humanChoice) {
         humanScore += 0;
         computerScore += 0;
         console.log("Draw")
-    } else if (computerChoice === "feuille" && humanChoice === "pierre" || computerChoice === "ciseaux" && humanChoice === "feuille" || computerChoice === "pierre" && humanChoice === "ciseaux" ) {
-        computerScore++
-        console.log("Computer wins");
+    } else if (computerChoice === "feuille" && humanChoice === "pierre" ||
+         computerChoice === "ciseaux" && humanChoice === "feuille" || 
+         computerChoice === "pierre" && humanChoice === "ciseaux" ) {
+         computerScore++
+         console.log("Computer wins");
         
     } else {
         humanScore++
